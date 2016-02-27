@@ -1,0 +1,20 @@
+!SESSION 2016-02-27 14:59:36.309 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.7.0_95
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -data /home/shreyas/Workspace/github/servletBlog -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2016-02-27 15:04:30.015
+!MESSAGE cacheFile=file:/home/shreyas/file:/opt/eclipse/configuration/org.eclipse.wst.server.discovery/serverAdapterSitesDetails.xml
+!SESSION 2016-02-27 15:07:44.758 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.7.0_95
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -data /home/shreyas/Workspace/github/servletBlog -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2016-02-27 15:08:01.667
+!MESSAGE cacheFile=file:/home/shreyas/file:/opt/eclipse/configuration/org.eclipse.wst.server.discovery/serverAdapterSitesDetails.xml
