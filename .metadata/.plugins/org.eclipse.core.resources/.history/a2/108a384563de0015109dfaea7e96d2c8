@@ -1,0 +1,11 @@
+package com.webnarad.dao.implTest;
+
+import org.junit.Test;
+
+public class UsersDaoImplTest {
+
+	@Test
+	public void testReadUser(){
+		
+	}
+}

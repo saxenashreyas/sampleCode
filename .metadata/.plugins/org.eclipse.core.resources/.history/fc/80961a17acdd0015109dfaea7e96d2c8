@@ -1,0 +1,7 @@
+package com.webnarad.dao.impl;
+
+import com.webnarad.dao.BlogDao;
+
+public class BlogDaoImpl implements BlogDao{
+
+}

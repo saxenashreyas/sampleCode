@@ -1,0 +1,9 @@
+package com.webnarad.dao.implTest;
+
+public class BlogDaoImplTest {
+
+	@Test
+	public void TestConstructor(){
+		
+	}
+}

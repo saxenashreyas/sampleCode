@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.wenarad.servlet&apos; to &apos;com.webnarad.servlet&apos;&#x0A;- Original project: &apos;servletBlog&apos;&#x0A;- Original element: &apos;servletBlog/src/com.wenarad.servlet&apos;&#x0A;- Renamed element: &apos;servletBlog/src/com.webnarad.servlet&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.wenarad.servlet&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.wenarad.servlet" name="com.webnarad.servlet" qualified="false" references="true" stamp="1456886727370" textual="false" version="1.0"/>
+</session>

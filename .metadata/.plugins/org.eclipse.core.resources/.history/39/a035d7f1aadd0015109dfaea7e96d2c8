@@ -1,0 +1,8 @@
+package com.webnarad.dao;
+
+public interface BlogDao {
+	
+	public void createBlog(String title, int authId);
+	
+	
+}

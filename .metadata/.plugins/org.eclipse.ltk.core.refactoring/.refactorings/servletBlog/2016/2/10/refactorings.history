@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.webnarad.dao.UsersDaoImpl&apos; to &apos;UsersDao&apos;&#x0A;- Original project: &apos;servletBlog&apos;&#x0A;- Original element: &apos;com.webnarad.dao.UsersDaoImpl&apos;&#x0A;- Renamed element: &apos;com.webnarad.dao.UsersDao&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;UsersDaoImpl&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.webnarad.dao{UsersDaoImpl.java[UsersDaoImpl" matchStrategy="1" name="UsersDao" qualified="false" references="true" similarDeclarations="false" stamp="1456694573833" textual="false" version="1.0"/>
+</session>

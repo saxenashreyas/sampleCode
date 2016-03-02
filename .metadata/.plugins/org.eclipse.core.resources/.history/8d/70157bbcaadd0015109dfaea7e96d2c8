@@ -1,0 +1,5 @@
+package com.webnarad.dao;
+
+public class BlogDao {
+
+}

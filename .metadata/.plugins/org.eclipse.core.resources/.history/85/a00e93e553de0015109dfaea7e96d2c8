@@ -1,0 +1,18 @@
+package com.webnarad.dao;
+
+public class DBConnectionManager {
+	private DataSource dataSource;
+
+	public DBConnectionManager(String jndiname) {
+	    try {
+	        dataSource = (DataSource) new InitialContext().lookup("java:comp/env/" + jndiname);
+	    } catch (NamingException e) {
+	        // Handle error that it's not configured in JNDI.
+	        throw new SomeRuntimeException(jndiname + " is missing in JNDI!", e);
+	    }
+	}
+
+	public Connection getConnection() {
+	    return dataSource.getConnection();
+	}
+}
