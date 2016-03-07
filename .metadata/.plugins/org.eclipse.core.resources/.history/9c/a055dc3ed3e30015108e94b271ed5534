@@ -1,0 +1,71 @@
+package com.webnarad.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.webnarad.dao.DBConnectionManager;
+import com.webnarad.dao.UsersDao;
+import com.webnarad.domain.User;
+
+public class UsersDaoImpl implements UsersDao {
+	static Logger log = LogManager.getLogger(UsersDaoImpl.class);
+	
+	private DBConnectionManager dbConnMgr;
+
+	public UsersDaoImpl(){
+		log.info("Initiating Users DAO Implementation");
+		try{
+			dbConnMgr = new DBConnectionManager("jdbc/db");
+		} catch(Exception e) {
+			log.error("Error in Connection Manager!!", e);
+		}
+	}
+	
+	@Override
+	public void createUser(String userName, String password) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteUser(String userId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public User readUser(String userId) {
+		log.info("Read User Info for : " + userId);
+		User returnVal = null;
+		try (
+			Connection conn = dbConnMgr.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(
+					"SELECT u.user_name uname, r.role_type role FROM USERS u, ROLES r "
+					+ "WHERE u.role_id = r.role_id AND u.user_id = ?");
+		) {
+			stmt.setInt(1, Integer.parseInt(userId));
+			try (ResultSet rs = stmt.executeQuery()){
+				if(rs.next()){
+					log.info("User - " + rs.getString("uname") + "/" + rs.getString("role"));
+					returnVal = new User();
+					returnVal.setUserId(userId);
+					returnVal.setUserName(rs.getString("uname"));
+				}
+			}
+			
+			//cleanup
+			stmt.close();
+			conn.close();
+			
+		} catch (SQLException e) {
+			log.error("Error reading user details for user : " + userId, e);
+		}
+		
+		return returnVal;
+	}
+}

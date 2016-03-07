@@ -6,4 +6,5 @@ org.eclipse.jdt.core.compiler.compliance=1.7
 org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
 org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
 org.eclipse.jdt.core.compiler.source=1.7
+org.eclipse.jdt.core.userLibrary.log4j=<?xml version\="1.0" encoding\="UTF-8"?>\n<userlibrary systemlibrary\="false" version\="2">\n\t<archive path\="/home/shreyas/Workspace/apache-log4j-2.5-bin/log4j-api-2.5.jar"/>\n\t<archive path\="/home/shreyas/Workspace/apache-log4j-2.5-bin/log4j-core-2.5.jar"/>\n</userlibrary>\n
 org.eclipse.jdt.core.userLibrary.mysql-connector-lib=<?xml version\="1.0" encoding\="UTF-8"?>\n<userlibrary systemlibrary\="false" version\="2">\n\t<archive path\="/home/shreyas/Workspace/mysql-connector-java-5.1.38/mysql-connector-java-5.1.38-bin.jar"/>\n</userlibrary>\n

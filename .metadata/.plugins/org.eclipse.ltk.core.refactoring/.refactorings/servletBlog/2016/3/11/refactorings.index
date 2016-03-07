@@ -1,0 +1,5 @@
+1457293562824	Rename type 'ListOfUsers'
+1457294403942	Move 'log4j.xml' to 'lib'
+1457294412643	Delete element
+1457294421529	Move 'log4j.xml' to 'WEB-INF'
+1457294559695	Rename resource 'log4j.xml'

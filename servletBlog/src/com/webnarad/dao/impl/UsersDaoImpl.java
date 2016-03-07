@@ -5,18 +5,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.webnarad.dao.DBConnectionManager;
 import com.webnarad.dao.UsersDao;
+import com.webnarad.domain.User;
 
 public class UsersDaoImpl implements UsersDao {
+	static Logger log = LogManager.getLogger(UsersDaoImpl.class);
 	
 	private DBConnectionManager dbConnMgr;
 
 	public UsersDaoImpl(){
+		log.info("Initiating Users DAO Implementation");
 		try{
 			dbConnMgr = new DBConnectionManager("jdbc/db");
 		} catch(Exception e) {
-			System.out.println("Error in Connection Manager!!");
+			log.error("Error in Connection Manager!!", e);
 		}
 	}
 	
@@ -33,25 +39,47 @@ public class UsersDaoImpl implements UsersDao {
 	}
 
 	@Override
-	public void readUser(String userId) {
-		
-		try (
-			Connection conn = dbConnMgr.getConnection();
-			PreparedStatement stmt = conn.prepareStatement("select * from users where user_id=?");
-		) {
+	public User readUser(String userId) {
+		log.info("Read User Info for : " + userId);
+		User returnVal = null;
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
+			conn = dbConnMgr.getConnection();
+			stmt = conn.prepareStatement(
+					"SELECT u.user_name uname, r.role_type role FROM users u, roles r "
+					+ "WHERE u.role_id = r.role_id AND u.user_id = ?");
 			stmt.setInt(1, Integer.parseInt(userId));
 			try (ResultSet rs = stmt.executeQuery()){
 				if(rs.next()){
-					System.out.println("User - " + rs.getString("user_name") + "/" + rs.getString("password"));
+					log.info("User - " + rs.getString("uname") + "/" + rs.getString("role"));
+					returnVal = new User();
+					returnVal.setUserId(userId);
+					returnVal.setUserName(rs.getString("uname"));
+					returnVal.setRole(rs.getString("role"));
 				}
 			}
 			
+			//cleanup
+			stmt.close();
+			conn.close();
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("Error reading user details for user : " + userId, e);
+			try {
+				if(stmt != null)
+					stmt.close();
+				if(conn != null){
+					conn.close();
+				}
+			} catch (SQLException e1) {
+				log.error("Error in closing DB connection", e1);
+			}
+			
 		}
 		
-
+		return returnVal;
 	}
-
+	
+	
 }

@@ -7,7 +7,7 @@ public class BlogDaoImpl implements BlogDao{
 	
 	@Override
 	public void createBlog(String title, String authId) {
-				
+			
 	}
 
 	@Override

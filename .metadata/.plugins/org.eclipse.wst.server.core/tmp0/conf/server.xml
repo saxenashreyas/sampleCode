@@ -128,7 +128,9 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="/home/shreyas/Workspace/github/servletBlog/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/></Host>
+      <Context docBase="/home/shreyas/Workspace/github/sampleCode/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/home/shreyas/Workspace/github/sampleCode/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/servletBlog" path="/servletBlog" reloadable="true" source="org.eclipse.jst.jee.server:servletBlog">
+    <Resource driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/db" password="password" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/servlet_blog" username="shreyas"/>
+</Context></Host>
     </Engine>
   </Service>
 </Server>

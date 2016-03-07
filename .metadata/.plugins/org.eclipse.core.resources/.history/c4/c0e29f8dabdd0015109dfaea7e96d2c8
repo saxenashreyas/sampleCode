@@ -1,8 +1,0 @@
-package com.webnarad.domain;
-
-public class Blog {
-	private String blogId;
-	private String title;
-	private User author;
-	private String startDate;
-}

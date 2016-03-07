@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.apache.logging.log4j.core.Logger"/>
+<fullyQualifiedTypeName name="java.util.logging.LogManager"/>
+<fullyQualifiedTypeName name="org.apache.logging.log4j.Logger"/>
+<fullyQualifiedTypeName name="org.apache.logging.log4j.LogManager"/>
+<fullyQualifiedTypeName name="com.webnarad.dao.UsersDao"/>
+<fullyQualifiedTypeName name="com.webnarad.dao.impl.UsersDaoImpl"/>
+<fullyQualifiedTypeName name="com.webnarad.domain.User"/>
+</qualifiedTypeNameHistroy>
